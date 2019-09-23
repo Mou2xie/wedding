@@ -1,0 +1,11 @@
+<swiper class="imgSwiper" bindchange="changeCurrent" current="0">
+  <swiper-item class="imgSwiper-Item" wx:for="{{imgArr}}" >
+    <image class="imgSwiper-Item-image" src="{{item.mainImg}}" mode="aspectFit"></image>
+  </swiper-item>
+</swiper>
+
+<view class="titleContainer">
+  <image class="titleContainer-image" src="{{imgArr[index].titleImg}}" mode="aspectFit"></image>
+</view>
+
+<text class="description">{{imgArr[index].description}}</text>

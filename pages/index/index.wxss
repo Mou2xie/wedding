@@ -1,0 +1,35 @@
+.imgSwiper {
+  /* border: 2rpx solid black; */
+  /* margin-top: 30rpx; */
+  width: 100%;
+  height: 700rpx;
+}
+
+.imgSwiper-Item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgSwiper-Item-image {
+  /* border: 2rpx solid black; */
+  height: 700rpx;
+}
+
+.titleContainer {
+  /* border: 2rpx solid black; */
+  width: 350rpx;
+  height: 120rpx;
+}
+
+.titleContainer-image {
+  /* border: 2rpx solid black; */
+  width: 100%;
+  height: 120rpx
+}
+
+.description {
+  margin-top: 20rpx;
+  width: 80%;
+  color: white;
+}
