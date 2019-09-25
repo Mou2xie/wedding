@@ -1,7 +1,10 @@
 Page({
 
   data: {
-    index:0,
+    current:0,
+    isAutoPlay:true,
+    animate:{},
+    heartNumArr:[1],
     imgArr:[
       { 
         mainImg:"/static/img/sayHello_01.png",
@@ -42,7 +45,16 @@ Page({
   },
 
   onLoad: function (options) {
-    
+    var _this = this;
+    var intervalId = setInterval(function(){
+      if(_this.data.current<6){
+        _this.setData({ current: _this.data.current + 1 });
+      }else{
+        clearInterval(intervalId);
+      }
+    },5000);
+
+    this.fade(_this,2000,1);
   },
 
   onShareAppMessage: function () {
@@ -50,6 +62,25 @@ Page({
   },
 
   changeCurrent:function(e){
-    this.setData({ index: e.detail.current});
+    var _this = this;
+    var heartNumArrNew = [];
+    this.setData({ current:e.detail.current});
+
+    for(var i = 0;i<this.data.current+1;i++){
+      heartNumArrNew.push(1);
+    }
+
+    this.setData({ heartNumArr: heartNumArrNew});
+  },
+
+  fade:function(that,duration,num){
+    var fadeAnimat = wx.createAnimation({
+      duration: duration,
+      timingFunction: 'linear'
+    });
+
+    fadeAnimat.opacity(num).step();
+
+    that.setData({ animate:fadeAnimat.export()});
   }
 })
