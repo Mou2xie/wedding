@@ -1,4 +1,4 @@
-<swiper class="imgSwiper" bindchange="changeCurrent" current="{{current}}" duration="800" interval="5000" animation="{{animateSwiper}}">
+<swiper class="imgSwiper" bindchange="changeCurrent" current="{{current}}" duration="2000"  animation="{{animateSwiper}}">
   <swiper-item class="imgSwiper-Item" wx:for="{{imgArr}}" >
     <image class="imgSwiper-Item-image" src="{{item.mainImg}}" mode="aspectFit"></image>
   </swiper-item>

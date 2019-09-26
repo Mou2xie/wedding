@@ -53,7 +53,7 @@ Page({
         clearInterval(intervalId);
 
       }
-    },6000);
+    },7000);
 
     this.setData({ animateSwiper:this.fade(1000,1),});
     
