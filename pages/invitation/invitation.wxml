@@ -1,0 +1,16 @@
+<view class="imgContainer" animation="{{animation1}}">
+    <image class="imgContainer-image" src="/static/img/pic01.jpg" mode="aspectFill"/>
+</view>
+
+<view class="textContainer" animation="{{animation2}}">
+    <image class="brace" src="/static/img/left.png" mode="widthFix" />
+    <image class="text"  src="/static/img/names.png" mode="widthFix"/>
+    <image class="brace" src="/static/img/right.png" mode="widthFix" />
+</view>
+
+<view class="timeAndAdress" animation="{{animation3}}">
+    <text class="time">2019.10.4</text>
+    <text class="adress">四川省 德阳市 黍森豪丽酒店 云湖厅</text>
+</view>
+
+<view class="button" bindtap="goTo" animation="{{animation3}}">重播</view>

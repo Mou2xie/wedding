@@ -3,6 +3,7 @@
   /* margin-top: 30rpx; */
   width: 100%;
   height: 700rpx;
+  opacity: 0;
 }
 
 .imgSwiper-Item {
@@ -44,6 +45,7 @@
   height: 100rpx;
   display: flex;
   justify-content: center;
+  opacity: 0;
 }
 
 .heartContainer-image{

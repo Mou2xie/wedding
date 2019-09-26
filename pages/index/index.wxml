@@ -1,15 +1,15 @@
-<swiper class="imgSwiper" bindchange="changeCurrent" current="{{current}}" duration="800" interval="5000">
+<swiper class="imgSwiper" bindchange="changeCurrent" current="{{current}}" duration="800" interval="5000" animation="{{animateSwiper}}">
   <swiper-item class="imgSwiper-Item" wx:for="{{imgArr}}" >
     <image class="imgSwiper-Item-image" src="{{item.mainImg}}" mode="aspectFit"></image>
   </swiper-item>
 </swiper>
 
-<view class="titleContainer" animation="{{animate}}">
+<view class="titleContainer" animation="{{animateText}}">
   <image class="titleContainer-image" src="{{imgArr[current].titleImg}}" mode="aspectFit"></image>
 </view>
 
-<text class="description" animation="{{animate}}">{{imgArr[current].description}}</text>
+<text class="description" animation="{{animateText}}">{{imgArr[current].description}}</text>
 
-<view class="heartContainer">
+<view class="heartContainer" animation="{{animateText}}">
   <image class="heartContainer-image" src="/static/img/heartFull.png" wx:for="{{heartNumArr}}"></image>
 </view>

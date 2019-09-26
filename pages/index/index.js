@@ -2,8 +2,8 @@ Page({
 
   data: {
     current:0,
-    isAutoPlay:true,
-    animate:{},
+    animateText:{},
+    animateSwiper:{},
     heartNumArr:[1],
     imgArr:[
       { 
@@ -51,10 +51,15 @@ Page({
         _this.setData({ current: _this.data.current + 1 });
       }else{
         clearInterval(intervalId);
-      }
-    },5000);
 
-    this.fade(_this,2000,1);
+      }
+    },6000);
+
+    this.setData({ animateSwiper:this.fade(1000,1),});
+    
+    setTimeout(function(){
+      _this.setData({ animateText:_this.fade(1000,1)});
+    },2000);
   },
 
   onShareAppMessage: function () {
@@ -62,7 +67,7 @@ Page({
   },
 
   changeCurrent:function(e){
-    var _this = this;
+
     var heartNumArrNew = [];
     this.setData({ current:e.detail.current});
 
@@ -71,16 +76,23 @@ Page({
     }
 
     this.setData({ heartNumArr: heartNumArrNew});
+
+    if(e.detail.current==6){
+      setTimeout(function(){
+        wx.redirectTo({
+          url: '/pages/invitation/invitation'
+      });
+      },4000);
+    }
   },
 
-  fade:function(that,duration,num){
+  fade:function(duration,num){
     var fadeAnimat = wx.createAnimation({
       duration: duration,
       timingFunction: 'linear'
     });
 
     fadeAnimat.opacity(num).step();
-
-    that.setData({ animate:fadeAnimat.export()});
+    return fadeAnimat.export();
   }
 })
