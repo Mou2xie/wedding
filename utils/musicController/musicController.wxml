@@ -1,0 +1,1 @@
+<image class="{{musicIconCss}}" src="{{musicIconImage}}" mode="widthFix" bindtap="switchStatusFun" />

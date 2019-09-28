@@ -1,12 +1,18 @@
-//app.js
 App({
+
+    globalData: {
+        audioPlay:true,
+        innerAudioContext:{}
+    },
 
     onLaunch: function(options){
 
         var innerAudioContext = wx.createInnerAudioContext();
-        innerAudioContext.autoplay = true;
+        innerAudioContext.autoplay = this.globalData.audioPlay;
+        innerAudioContext.volume = 0.3;
         innerAudioContext.loop = true;
-        innerAudioContext.src = "/static/audio/8bit_World.mp3";
+        innerAudioContext.src = "/static/audio/Canlon126.mp3";
+        this.globalData.innerAudioContext = innerAudioContext
         
     },
     onShow: function(options){
@@ -17,9 +23,5 @@ App({
     },
     onError: function(msg){
 
-    },
-
-    globalData: {
-        
     }
 });

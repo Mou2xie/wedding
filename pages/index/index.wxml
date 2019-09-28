@@ -1,4 +1,8 @@
-<swiper class="imgSwiper" bindchange="changeCurrent" current="{{current}}" duration="2000"  animation="{{animateSwiper}}">
+<view class="musicIconCotainer">
+<musicController switch="{{isOn}}" bindchangeTo="controlMusicPlay"></musicController>
+</view>
+
+<swiper class="imgSwiper" bindchange="changeCurrent" current="{{current}}" duration="1800"  animation="{{animateSwiper}}">
   <swiper-item class="imgSwiper-Item" wx:for="{{imgArr}}" >
     <image class="imgSwiper-Item-image" src="{{item.mainImg}}" mode="aspectFit"></image>
   </swiper-item>

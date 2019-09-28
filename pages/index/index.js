@@ -5,6 +5,8 @@ Page({
     animateText:{},
     animateSwiper:{},
     heartNumArr:[1],
+    musicIconCss:"musicIconCotainer-image-on",
+    musicIconImage:"/static/img/musicOn.png",
     imgArr:[
       { 
         mainImg:"/static/img/sayHello_01.png",
@@ -42,6 +44,7 @@ Page({
         description: " 所以，诚邀你参与我们的婚礼，继续见证小白和老谢的故事。"
       },
     ],
+    isOn:""
   },
 
   onLoad: function (options) {
@@ -60,6 +63,12 @@ Page({
     setTimeout(function(){
       _this.setData({ animateText:_this.fade(1000,1)});
     },2000);
+
+    if(getApp().globalData.audioPlay){
+      this.setData({isOn:"on"});
+  }else{
+      this.setData({isOn:"off"});
+  }
   },
 
   onShareAppMessage: function () {
@@ -94,5 +103,13 @@ Page({
 
     fadeAnimat.opacity(num).step();
     return fadeAnimat.export();
+  },
+
+  controlMusicPlay:function(e){
+    if(e.detail.changeTo =="off"){
+      getApp().globalData.innerAudioContext.stop();
+    }else{
+      getApp().globalData.innerAudioContext.play();
+    }
   }
 })

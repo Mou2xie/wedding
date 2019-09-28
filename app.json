@@ -9,5 +9,8 @@
     "navigationBarTitleText": "小白和老谢的故事",
     "navigationBarTextStyle": "white"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents":{
+    "musicController":"/utils/musicController/musicController"
+  }
 }

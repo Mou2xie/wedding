@@ -1,3 +1,7 @@
+<view class="musicIconCotainer">
+<musicController switch="{{isOn}}" bindchangeTo="controlMusicPlay"></musicController>
+</view>
+
 <view class="imgContainer" animation="{{animation1}}">
     <image class="imgContainer-image" src="/static/img/pic01.jpg" mode="aspectFill"/>
 </view>

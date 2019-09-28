@@ -3,6 +3,7 @@ Page({
         animation1:{},
         animation2:{},
         animation3:{},
+        isOn:""
     },
 
     onLoad: function(options){
@@ -16,6 +17,12 @@ Page({
         setTimeout(function(){
             _this.setData({animation3:_this.createAnimation(1000,1)});
         },3000);
+
+        if(getApp().globalData.audioPlay){
+            this.setData({isOn:"on"});
+        }else{
+            this.setData({isOn:"off"});
+        }
     },
 
     goTo:function(){
@@ -32,5 +39,13 @@ Page({
 
         animation.opacity(num).step();
         return animation.export();
+    },
+
+    controlMusicPlay:function(e){
+        if(e.detail.changeTo =="off"){
+            getApp().globalData.innerAudioContext.stop();
+          }else{
+            getApp().globalData.innerAudioContext.play();
+          }
     }
 });
