@@ -44,8 +44,10 @@ Page({
     controlMusicPlay:function(e){
         if(e.detail.changeTo =="off"){
             getApp().globalData.innerAudioContext.stop();
+            getApp().globalData.audioPlay = false
           }else{
             getApp().globalData.innerAudioContext.play();
+            getApp().globalData.audioPlay = true
           }
     }
 });

@@ -64,11 +64,11 @@ Page({
       _this.setData({ animateText:_this.fade(1000,1)});
     },2000);
 
-    if(getApp().globalData.audioPlay){
+    if(getApp().globalData.audioPlay || getApp().globalData.audioPlay == undefined){
       this.setData({isOn:"on"});
-  }else{
+    }else{
       this.setData({isOn:"off"});
-  }
+    }
   },
 
   onShareAppMessage: function () {
@@ -108,8 +108,10 @@ Page({
   controlMusicPlay:function(e){
     if(e.detail.changeTo =="off"){
       getApp().globalData.innerAudioContext.stop();
+      getApp().globalData.audioPlay = false
     }else{
       getApp().globalData.innerAudioContext.play();
+      getApp().globalData.audioPlay = true
     }
   }
 })

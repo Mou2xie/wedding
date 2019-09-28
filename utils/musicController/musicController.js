@@ -21,7 +21,8 @@ Component({
         switchStatus:""
     },
     lifetimes:{
-        attached:function(){
+
+        ready:function(){
             this.setData({switchStatus:this.data.switch});
 
             if(this.data.switchStatus=="on"){
